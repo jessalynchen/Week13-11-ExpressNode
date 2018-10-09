@@ -1,18 +1,18 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
-var myApp = express();
+var app = express();
 var PORT = process.env.PORT || 8080;
 
-myApp.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
-myApp.use(bodyParser.json());
+app.use(bodyParser.json());
 
-require("./app/routing/apiRoutes")(myApp);
-require("./app/routing/htmlRoutes")(myApp);
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 app.listen(PORT, function() {
-  console.log("I'm listening on port " + PORT);
+  console.log("Listen on Port " + PORT);
 });
 
 //remember to npm i express

@@ -3,11 +3,11 @@ var friends = require("../data/friends");
 
 module.exports = function(app) {
 
-  myApp.get("/api/friends", function(req, res) {
+  app.get("/api/friends", function(req, res) {
     res.json(friends);
   });
 
-  myApp.post("/api/friends", function(req, res) {
+  app.post("/api/friends", function(req, res) {
 
     var bestMatch = {
       name: "",
